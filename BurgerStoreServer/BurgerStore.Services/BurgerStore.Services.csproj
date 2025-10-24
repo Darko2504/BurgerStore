@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BurgerStore.DataAcess\BurgerStore.DataAcess.csproj" />
+    <ProjectReference Include="..\BurgerStore.Domain\BurgerStore.Domain.csproj" />
+    <ProjectReference Include="..\BurgerStore.Dtos\BurgerStore.Dtos.csproj" />
+    <ProjectReference Include="..\BurgerStore.Shared\BurgerStore.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

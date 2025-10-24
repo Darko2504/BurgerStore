@@ -1,0 +1,18 @@
+﻿using BurgerStore.Domain.Enums;
+using System.Text.Json.Serialization;
+
+namespace BurgerStore.Domain.Entities
+{
+    public class Burger
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string? Description { get; set; }
+        public int Price { get; set; }
+        public List<IngredientsEnum> Ingredients { get; set; }
+        public User User { get; set; }
+        public int? OrderId { get; set; }
+        [JsonIgnore]
+        public Order Order { get; set; }
+    }
+}
