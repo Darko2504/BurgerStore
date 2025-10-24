@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BurgerStore.DataAcess\BurgerStore.DataAcess.csproj" />
-    <ProjectReference Include="..\BurgerStore.Mappers\BurgerStore.Mappers.csproj" />
     <ProjectReference Include="..\BurgerStore.Shared\BurgerStore.Shared.csproj" />
   </ItemGroup>
 

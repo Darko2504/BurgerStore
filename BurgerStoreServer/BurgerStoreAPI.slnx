@@ -3,7 +3,7 @@
   <Project Path="BurgerStore.Domain/BurgerStore.Domain.csproj" />
   <Project Path="BurgerStore.Dtos/BurgerStore.Dtos.csproj" />
   <Project Path="BurgerStore.Helperss/BurgerStore.Helperss.csproj" />
-  <Project Path="BurgerStore.Mappers/BurgerStore.Mappers.csproj" />
+  <Project Path="BurgerStore.Mapperss/BurgerStore.Mapperss.csproj" Id="d65ff3e3-7182-4fe7-a884-0e9f58441c23" />
   <Project Path="BurgerStore.Services/BurgerStore.Services.csproj" />
   <Project Path="BurgerStore.Shared/BurgerStore.Shared.csproj" />
   <Project Path="BurgerStore/BurgerStore.csproj" />
