@@ -1,42 +1,102 @@
 ﻿using BurgerStore.DataAcess.Abstractions;
+using BurgerStore.DataAcess.DbContext;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BurgerStore.DataAcess.Implementations
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        public Task Add(T entity)
+        private readonly BurgerAppDbContext _dbContext;
+        public BaseRepository(BurgerAppDbContext dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
+        }
+        public async Task Add(T entity)
+        {
+            try
+            {
+                _dbContext.Set<T>().Add(entity);
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
-        public Task<List<T>> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<T> GetAll = await _dbContext.Set<T>().ToListAsync();
+                return GetAll;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public Task<T> GetById(string id)
+        public async Task<T> GetById(string id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _dbContext.Set<T>().FindAsync(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public Task<T> GetByIdInt(int id)
+        public async Task<T> GetByIdInt(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _dbContext.Set<T>().FindAsync(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public Task Remove(T entity)
+        public async Task Remove(T entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _dbContext.Set<T>().Remove(entity);
+                await _dbContext.SaveChangesAsync();    
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public Task SaveChanges()
+        public async Task SaveChanges()
         {
-            throw new NotImplementedException();
+            await _dbContext.SaveChangesAsync();
         }
 
-        public Task Update(T entity)
+        public async Task Update(T entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _dbContext.Set<T>().Update(entity);
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
