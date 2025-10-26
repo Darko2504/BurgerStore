@@ -10,7 +10,9 @@ namespace BurgerStore.Domain.Entities
         public string? Description { get; set; }
         public int Price { get; set; }
         public List<IngredientsEnum> Ingredients { get; set; }
+        public string UserId { get; set; }
         public User User { get; set; }
+
         public int? OrderId { get; set; }
         [JsonIgnore]
         public Order Order { get; set; }
