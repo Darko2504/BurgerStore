@@ -1,4 +1,5 @@
 
+using BurgerStore.Helperss.DIHelper;
 using BurgerStore.Helperss.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddSwaggerGen();
 
 
 
+DIHelper.InjectDbRepositories(builder.Services);
+DIHelper.InjectServices(builder.Services);
 
 var app = builder.Build();
 

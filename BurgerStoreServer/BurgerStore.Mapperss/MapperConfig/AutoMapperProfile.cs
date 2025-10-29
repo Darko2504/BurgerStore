@@ -24,7 +24,7 @@ namespace BurgerStore.Mapperss.MapperConfig
             CreateMap<Burger, AddBurgerDto>().ReverseMap();
 
             CreateMap<Order, OrderDto>().ReverseMap();
-            CreateMap<Order, AdOrderDto>().ReverseMap();
+            CreateMap<Order, AddOrderDto>().ReverseMap();
             CreateMap<Order, UpdateOrderDto>().ReverseMap();
 
         }

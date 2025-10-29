@@ -1,6 +1,6 @@
 ﻿namespace BurgerStore.Dtos.OrderDtos
 {
-    public class AdOrderDto
+    public class AddOrderDto
     {
         public string AdressTo { get; set; }
         public string? Description { get; set; }
