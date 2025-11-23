@@ -1,13 +1,22 @@
 
 using BurgerStore.Helperss.DIHelper;
 using BurgerStore.Helperss.Extensions;
+using BurgerStore.Mapperss.MapperConfig;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var appSettings = builder.Configuration.GetSection("AppSettings");
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddPostgreSqlDbContext(appSettings).AddIdentityExtension();
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly)
+                 .AddPostgreSqlDbContext(appSettings)
+                 .AddAuthentication()
+                 .AddJwt(appSettings)
+                 .AddIdentityExtension()
+                 .AddCors()
+                 .AddSwagger();
+                 
+                 
 
 
 builder.Services.AddControllers();
