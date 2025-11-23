@@ -24,15 +24,15 @@ namespace BurgerStore.Helperss.Extensions
                 Configuration = configuration;
             }
         }
-        public static ConfigBuilder AddPostgreSqlDbContext(this IServiceCollection services, IConfigurationSection appSettings)
+        public static ConfigBuilder AddPostgreSqlDbContext(this IServiceCollection services, IConfigurationSection configuration)
         {
-            var connectionString = appSettings.GetValue<string>("ConnectionString");
+            var connectionString = configuration.GetValue<string>("ConnectionString");
 
             services.AddDbContext<BurgerAppDbContext>(options =>
                 options.UseNpgsql(connectionString));
 
             // Return ConfigBuilder for chaining
-            return new ConfigBuilder(services, appSettings.GetSection("").Value == null ? services.BuildServiceProvider().GetService<IConfiguration>() : null);
+            return new ConfigBuilder(services, configuration);
         }
 
         public static ConfigBuilder AddIdentityExtension(this ConfigBuilder builder)

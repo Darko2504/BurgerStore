@@ -18,8 +18,4 @@
     <ProjectReference Include="..\BurgerStore.Shared\BurgerStore.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UserService\" />
-  </ItemGroup>
-
 </Project>

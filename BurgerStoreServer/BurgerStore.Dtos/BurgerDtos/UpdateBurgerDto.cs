@@ -11,4 +11,4 @@ namespace BurgerStore.Dtos.BurgerDtos
         public int? OrderId { get; set; }
     }
 }
-}
+

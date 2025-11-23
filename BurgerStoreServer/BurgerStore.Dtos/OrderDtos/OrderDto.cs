@@ -1,4 +1,6 @@
-﻿namespace BurgerStore.Dtos.OrderDtos
+﻿using BurgerStore.Dtos.BurgerDtos;
+
+namespace BurgerStore.Dtos.OrderDtos
 {
     public class OrderDto
     {
