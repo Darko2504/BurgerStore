@@ -2,6 +2,8 @@
 using BurgerStore.DataAcess.Implementations;
 using BurgerStore.Services.Abstractions;
 using BurgerStore.Services.Implementations;
+using BurgerStore.Services.UserService.Abstractions;
+using BurgerStore.Services.UserService.Implementations;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BurgerStore.Helperss.DIHelper
@@ -18,6 +20,8 @@ namespace BurgerStore.Helperss.DIHelper
         {
             services.AddScoped<IBurgerService, BurgerService>();
             services.AddScoped<IOrderService, OrderService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ITokenService, TokenService>();
         }
     }
 }
